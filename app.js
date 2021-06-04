@@ -1,6 +1,8 @@
 // import functions
 import { add } from './calculations.js';
 import { subtract } from './calculations.js';
+import { multiply } from './calculations.js';
+
 // reference needed DOM elements
 const additionInputX = document.getElementById('x');
 const additionInputY = document.getElementById('y');
@@ -12,19 +14,30 @@ const subtractInputY = document.getElementById('y');
 const subtractButton = document.getElementById('calculate-subtract');
 const subtractResult = document.getElementById(result-subtract);
 
+const multiplyInputX = document.getElementById('x');
+const multiplyInputY = document.getElementById('y');
+const mutliplyButton = document.getElementById('calculate-multiply');
+const multiplyResult = document.getElementById(result-multiply);
 // set event listeners 
 additionButton.addEventListener('click', () => {
-  const numberInputX = Number(additionInputX.value); 
-  const numberInputY = Number(additionInputY.value);
-const sum = add(numberInputX, numberInputY);
-additionResult.textContent = sum; 
+    const numberInputX = Number(additionInputX.value); 
+    const numberInputY = Number(additionInputY.value);
+    const sum = add(numberInputX, numberInputY);
+    additionResult.textContent = sum; 
 });
 
 subtractButton.addEventListener('click', () => {
   const numberInputX = Number(subtractInputX.value);
   const numberInputY = Number(subtractInputY.value);
-  const sum = subtract(numberInputX, numberInputY);
+  const subtract = subtract(numberInputX, numberInputY);
   subtractResult.textContent = subtract;
+})
+
+multiplyButton.addEventListener('click', () => {
+  const numberInputX = Number(multiplyInputX.value);
+  const numberInputY = Number(multiplyInputY.value);
+  const multiply = multiply(numberInputX, numberInputY);
+  multiplyResult.textContent = multiply;
 })
   // get user input(s)
   // do any needed work with the value(s)
