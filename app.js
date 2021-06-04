@@ -2,6 +2,7 @@
 import { add } from './calculations.js';
 import { subtract } from './calculations.js';
 import { multiply } from './calculations.js';
+import { divide } from './calculations.js';
 
 // reference needed DOM elements
 const additionInputX = document.getElementById('x');
@@ -18,6 +19,11 @@ const multiplyInputX = document.getElementById('x');
 const multiplyInputY = document.getElementById('y');
 const mutliplyButton = document.getElementById('calculate-multiply');
 const multiplyResult = document.getElementById(result-multiply);
+
+const divideInputX = document.getElementById('x');
+const divideInputY = document.getElementById('y');
+const divideButton = document.getElementById('calculate-divide');
+consst divideResult = document.getElementById(result-divide);
 // set event listeners 
 additionButton.addEventListener('click', () => {
     const numberInputX = Number(additionInputX.value); 
@@ -38,6 +44,13 @@ multiplyButton.addEventListener('click', () => {
   const numberInputY = Number(multiplyInputY.value);
   const multiply = multiply(numberInputX, numberInputY);
   multiplyResult.textContent = multiply;
+})
+
+divideButton.addEventListener('click', () => {
+  const numberInputX = Number(divideInputX.value);
+  const numberInputY = Number(divideInputY.value);
+  const divide = divide (numberInputX, numberInputY);
+  divideResult.textContent = divide; 
 })
   // get user input(s)
   // do any needed work with the value(s)

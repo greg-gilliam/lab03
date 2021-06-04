@@ -10,3 +10,7 @@ export function multiply(x, y) {
     const multiply = x * y; 
     return multiply;
 }
+export function divide(x, y) {
+    const divide = x / y; 
+    return divide;
+}
